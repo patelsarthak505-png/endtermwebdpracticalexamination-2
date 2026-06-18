@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum Calculator</title>
+</head>
+<body>
+    <h2>Sum of N Numbers</h2>
+    
+    <input type="text" id="numbers" placeholder="e.g. 1, 2, 3">
+    <button onclick="calculate()">Get Sum</button>
+    
+    <h3 id="result"></h3>
+
+    <script>
+        function calculate() {
+            // Get input, split by commas, and sum the numbers
+            const total = document.getElementById('numbers').value
+                .split(',')
+                .reduce((sum, num) => sum + (Number(num.trim()) || 0), 0);
+            
+            // Display the result
+            document.getElementById('result').innerText = "Total: " + total;
+        }
+    </script>
+</body>
+</html>          
